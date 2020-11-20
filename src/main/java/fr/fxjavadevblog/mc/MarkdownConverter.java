@@ -28,14 +28,19 @@ import com.vladsch.flexmark.util.data.MutableDataSet;
 @Path("/api/v1")
 public class MarkdownConverter {
 
-	private static DataHolder OPTIONS = new MutableDataSet().set(Parser.REFERENCES_KEEP, KeepType.LAST)
-			.set(HtmlRenderer.INDENT_SIZE, 2).set(HtmlRenderer.PERCENT_ENCODE_URLS, true)
+	private static DataHolder OPTIONS = new MutableDataSet()
+			.set(Parser.REFERENCES_KEEP, KeepType.LAST)
+			.set(HtmlRenderer.INDENT_SIZE, 2)
+			.set(HtmlRenderer.PERCENT_ENCODE_URLS, true)
 
 			// for full GFM table compatibility add the following table extension options:
-			.set(TablesExtension.COLUMN_SPANS, false).set(TablesExtension.APPEND_MISSING_COLUMNS, true)
-			.set(TablesExtension.DISCARD_EXTRA_COLUMNS, true).set(TablesExtension.HEADER_SEPARATOR_COLUMN_MATCH, true)
+			.set(TablesExtension.COLUMN_SPANS, false)
+			.set(TablesExtension.APPEND_MISSING_COLUMNS, true)
+			.set(TablesExtension.DISCARD_EXTRA_COLUMNS, true)
+			.set(TablesExtension.HEADER_SEPARATOR_COLUMN_MATCH, true)
 			.set(EmojiExtension.ROOT_IMAGE_PATH, "http://localhost:8080/img/")
-			.set(Parser.EXTENSIONS, Arrays.asList(TablesExtension.create(), EmojiExtension.create())).toImmutable();
+			.set(Parser.EXTENSIONS, Arrays.asList(TablesExtension.create(), EmojiExtension.create()))
+			.toImmutable();
 
 	@Path("/conversion")
 	@POST
