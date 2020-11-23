@@ -1,0 +1,12 @@
+---
+openapi: 3.0.3
+info:
+  title: markdown-converter
+  description: converts markdown with emojis into HTML or PDF.
+  contact:
+    name: François-Xavier Robin
+    url: https://www.fxjavadevblog.fr
+    email: fx.robin@fxjavadevblog.fr
+  license:
+    name: Apache 2.0
+  version: 1.0.0
